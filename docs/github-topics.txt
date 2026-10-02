@@ -1,0 +1,19 @@
+Description:
+Architecture tests for NestJS that understand modules, providers and exports: public API rules, module cycles, layer rules, baseline for legacy code, and Mermaid diagrams generated from the code.
+
+Topics:
+nestjs
+nestjs-module
+architecture
+software-architecture
+modular-monolith
+module-boundaries
+dependency-rules
+architecture-tests
+static-analysis
+typescript
+cli
+github-actions
+mermaid
+clean-architecture
+ddd

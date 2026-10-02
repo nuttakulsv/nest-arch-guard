@@ -1,0 +1,25 @@
+{
+  "boundaries": {
+    "app": "src/*",
+    "config": "src/config",
+    "logging": "src/logging",
+    "orders-domain": "src/orders/domain",
+    "orders": "src/orders",
+    "payments": { "modules": ["PaymentsModule"] },
+    "users": "src/users"
+  },
+  "rules": {
+    "dependencies": [{ "from": "users", "deny": ["orders", "payments"] }],
+    "layers": {
+      "order": [
+        { "name": "controller", "files": "**/*.controller.ts" },
+        { "name": "service", "files": "**/*.service.ts" },
+        { "name": "repository", "files": "**/*.repository.ts" }
+      ]
+    },
+    "noCycles": true,
+    "onlyThroughPublicApi": true,
+    "noDeepImports": true,
+    "forbidden": [{ "from": "orders-domain", "packages": ["@nestjs/*"] }]
+  }
+}
